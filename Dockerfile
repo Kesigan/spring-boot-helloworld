@@ -2,7 +2,6 @@ FROM openjdk:8-jdk-alpine AS builder
 WORKDIR target/dependency
 ARG APPJAR=target/*.jar
 ONBUILD COPY ${APPJAR} ./app.jar
-RUN jar -xf ./app.jar
 
 FROM openjdk:8-jre-alpine
 VOLUME /tmp
